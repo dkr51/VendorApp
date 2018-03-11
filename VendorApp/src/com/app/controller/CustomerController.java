@@ -23,8 +23,7 @@ public class CustomerController {
 	
 	@RequestMapping("/custReg")
 	public String shoeRegPage(){
-		return "CustomerReg";
-		
+		return "CustomerReg";		
 	}
 
 	@RequestMapping(value="/insertCust",method=RequestMethod.POST)
@@ -39,16 +38,13 @@ public class CustomerController {
 			List<Customer> custList=service.getAllCustomers();
 			map.addAttribute("custListObj", custList);
 			return "CustomerData";
-		}
-		
-		
+		}			
 		
 		@RequestMapping("/deleteCust")
 		public String deleteCust(@RequestParam("custId")int Id){
 			service.deleteCustById(Id);
 			return "redirect:viewCusts";
-		}
-		
+		}		
 		
 		@RequestMapping("/updateCust")
 		public String showEditPage(

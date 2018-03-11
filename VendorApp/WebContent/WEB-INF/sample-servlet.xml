@@ -22,10 +22,10 @@
 	<!-- 2. DMDS -->
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		name="dsObj"
-		p:driverClassName="oracle.jdbc.driver.OracleDriver"
-		p:url="jdbc:oracle:thin:@localhost:1521:xe"
-		p:username="system"
-		p:password="vendor"
+		p:driverClassName="com.mysql.jdbc.Driver"
+		p:url="jdbc:mysql://localhost:3306/vendor"
+		p:username="admin"
+		p:password="admin"
 	/>
 	
 	
@@ -36,7 +36,7 @@
 	  <property name="dataSource" ref="dsObj"/>
 	  <property name="hibernateProperties">
 	  	<props>
-	  	 <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+	  	 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 	  	 <prop key="hibernate.show_sql">true</prop>
 	  	 <prop key="hibernate.hbm2ddl.auto">update</prop>
 	  	</props>
